@@ -424,4 +424,42 @@ private fun ExperienceDropdown(
                 .menuAnchor()
                 .height(dimensionResource(R.dimen.field_height))
         )
+        ExposedDropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false }
+        ) {
+            options.forEach { option ->
+                DropdownMenuItem(
+                    text = { Text(option) },
+                    onClick = {
+                        onSelected(option)
+                        expanded = false
+                    }
+                )
+            }
+        }
+    }
+}
 
+@Composable
+private fun SkillCheckbox(
+    label: String,
+    checked: Boolean,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Checkbox(
+            checked = checked,
+            onCheckedChange = onCheckedChange,
+            colors = CheckboxDefaults.colors(
+                checkedColor = colorResource(R.color.checkbox_checked),
+                uncheckedColor = colorResource(R.color.field_border)
+            )
+        )
+        Text(
+            text = label,
+            color = colorResource(R.color.label_text),
+            fontSize = dimensionResource(R.dimen.text_skill).value.sp
+        )
+    }
+}
