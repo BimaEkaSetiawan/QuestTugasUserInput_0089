@@ -183,4 +183,22 @@ fun BiodataScreen() {
                         )
                         Spacer(Modifier.height(dimensionResource(R.dimen.spacing_medium)))
 
+                        // Tanggal lahir & experience
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
+                        ) {
+                            BirthDateField(
+                                value = birthDate,
+                                onDateSelected = { birthDate = it },
+                                modifier = Modifier.weight(1f)
+                            )
+                            ExperienceDropdown(
+                                value = experience,
+                                onSelected = { experience = it },
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
+
 
