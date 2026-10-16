@@ -270,4 +270,15 @@ fun BiodataScreen() {
             val popupTextSize = dimensionResource(R.dimen.text_popup).value.sp
             val popupTextColor = colorResource(R.color.popup_text)
 
+            Box(
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(horizontal = dimensionResource(R.dimen.popup_margin))
+                    .fillMaxWidth()
+                    .shadow(dimensionResource(R.dimen.popup_elevation), popupShape)
+                    .clip(popupShape)
+                    .background(colorResource(R.color.popup_background))
+                    .clickable { showResult = false }
+                    .padding(dimensionResource(R.dimen.popup_padding))
+            ) {
 
