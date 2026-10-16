@@ -323,4 +323,22 @@ private fun fieldColors() = OutlinedTextFieldDefaults.colors(
     unfocusedLabelColor = colorResource(R.color.field_text)
 )
 
+@Composable
+private fun FormField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    hint: String,
+    modifier: Modifier = Modifier
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        label = { Text(hint, fontSize = dimensionResource(R.dimen.text_field).value.sp) },
+        singleLine = true,
+        shape = RoundedCornerShape(dimensionResource(R.dimen.field_corner)),
+        colors = fieldColors(),
+        modifier = modifier.height(dimensionResource(R.dimen.field_height))
+    )
+}
+
 
