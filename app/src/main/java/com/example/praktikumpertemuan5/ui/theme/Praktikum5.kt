@@ -111,5 +111,26 @@ fun BiodataScreen() {
                         .height(dimensionResource(R.dimen.header_height))
                 )
 
+                // Box yang mengapung di atas Scaffold
+                Surface(
+                    shape = RoundedCornerShape(
+                        topStart = dimensionResource(R.dimen.card_corner),
+                        topEnd = dimensionResource(R.dimen.card_corner)
+                    ),
+                    color = colorResource(R.color.card_background),
+                    modifier = Modifier
+                        .padding(
+                            top = dimensionResource(R.dimen.card_top_offset),
+                            bottom = dimensionResource(R.dimen.card_bottom_margin)
+                        )
+                        .fillMaxWidth()
+                        .shadow(
+                            elevation = dimensionResource(R.dimen.card_elevation),
+                            shape = RoundedCornerShape(
+                                topStart = dimensionResource(R.dimen.card_corner),
+                                topEnd = dimensionResource(R.dimen.card_corner)
+                            )
+                        )
+                ) {
 
 }
