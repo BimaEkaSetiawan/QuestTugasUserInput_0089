@@ -77,5 +77,13 @@ fun BiodataScreen() {
     var showResult by rememberSaveable { mutableStateOf(false) }
     val popupDuration = integerResource(R.integer.popup_duration_ms).toLong()
 
+    // Popup otomatis hilang setelah durasi di resources (5 detik)
+    LaunchedEffect(showResult) {
+        if (showResult) {
+            delay(popupDuration)
+            showResult = false
+        }
+    }
+
 
 }
