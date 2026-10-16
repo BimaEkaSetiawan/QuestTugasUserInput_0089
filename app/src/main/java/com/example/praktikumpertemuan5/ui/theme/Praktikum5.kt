@@ -132,5 +132,11 @@ fun BiodataScreen() {
                             )
                         )
                 ) {
+                    Column(
+                        modifier = Modifier
+                            .verticalScroll(rememberScrollState())
+                            .padding(dimensionResource(R.dimen.card_padding)),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
 
 }
