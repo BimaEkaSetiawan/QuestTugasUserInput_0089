@@ -155,4 +155,23 @@ fun BiodataScreen() {
                         Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
 
                         // Nama depan & belakang
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
+                        ) {
+                            FormField(
+                                value = firstName,
+                                onValueChange = { firstName = it },
+                                hint = stringResource(R.string.hint_first_name),
+                                modifier = Modifier.weight(1f)
+                            )
+                            FormField(
+                                value = lastName,
+                                onValueChange = { lastName = it },
+                                hint = stringResource(R.string.hint_last_name),
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_medium)))
+
 
