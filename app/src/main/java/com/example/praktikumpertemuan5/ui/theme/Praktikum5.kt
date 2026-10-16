@@ -201,4 +201,35 @@ fun BiodataScreen() {
                         }
                         Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
 
+                        // Skill
+                        Text(
+                            text = stringResource(R.string.skill_title),
+                            color = colorResource(R.color.label_text),
+                            fontSize = dimensionResource(R.dimen.text_label).value.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            SkillCheckbox(
+                                label = stringResource(R.string.skill_android),
+                                checked = skillAndroid,
+                                onCheckedChange = { skillAndroid = it }
+                            )
+                            SkillCheckbox(
+                                label = stringResource(R.string.skill_uiux),
+                                checked = skillUiUx,
+                                onCheckedChange = { skillUiUx = it }
+                            )
+                            SkillCheckbox(
+                                label = stringResource(R.string.skill_web),
+                                checked = skillWeb,
+                                onCheckedChange = { skillWeb = it }
+                            )
+                        }
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
+
 
