@@ -260,4 +260,14 @@ fun BiodataScreen() {
         }
 
         // Popup hitam: Box di luar Scaffold, mengapung di atasnya
+        if (showResult) {
+            val skillText = buildList {
+                if (skillAndroid) add(stringResource(R.string.skill_android))
+                if (skillUiUx) add(stringResource(R.string.skill_uiux))
+                if (skillWeb) add(stringResource(R.string.skill_web))
+            }.joinToString(stringResource(R.string.skill_separator))
+            val popupShape = RoundedCornerShape(dimensionResource(R.dimen.popup_corner))
+            val popupTextSize = dimensionResource(R.dimen.text_popup).value.sp
+            val popupTextColor = colorResource(R.color.popup_text)
+
 
