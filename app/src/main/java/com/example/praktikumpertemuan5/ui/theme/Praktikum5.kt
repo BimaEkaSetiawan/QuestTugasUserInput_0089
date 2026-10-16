@@ -341,4 +341,35 @@ private fun FormField(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun BirthDateField(
+    value: String,
+    onDateSelected: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    var showPicker by rememberSaveable { mutableStateOf(false) }
+    val pickerState = rememberDatePickerState()
+    val dateFormat = stringResource(R.string.date_format)
+
+    OutlinedTextField(
+        value = value,
+        onValueChange = {},
+        readOnly = true,
+        label = { Text(stringResource(R.string.hint_birth_date), fontSize = dimensionResource(R.dimen.text_field).value.sp) },
+        trailingIcon = {
+            IconButton(onClick = { showPicker = true }) {
+                Icon(
+                    imageVector = Icons.Default.DateRange,
+                    contentDescription = stringResource(R.string.cd_calendar),
+                    tint = colorResource(R.color.field_text)
+                )
+            }
+        },
+        singleLine = true,
+        shape = RoundedCornerShape(dimensionResource(R.dimen.field_corner)),
+        colors = fieldColors(),
+        modifier = modifier.height(dimensionResource(R.dimen.field_height))
+    )
+
 
