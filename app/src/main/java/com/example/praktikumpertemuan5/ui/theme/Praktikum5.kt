@@ -281,4 +281,35 @@ fun BiodataScreen() {
                     .clickable { showResult = false }
                     .padding(dimensionResource(R.dimen.popup_padding))
             ) {
+                Column {
+                    Text(
+                        text = stringResource(R.string.result_name, firstName, lastName),
+                        color = popupTextColor,
+                        fontSize = popupTextSize
+                    )
+                    Text(
+                        text = stringResource(R.string.result_email, email),
+                        color = popupTextColor,
+                        fontSize = popupTextSize
+                    )
+                    Text(
+                        text = stringResource(R.string.result_birth_date, birthDate),
+                        color = popupTextColor,
+                        fontSize = popupTextSize
+                    )
+                    Text(
+                        text = stringResource(R.string.result_experience, experience),
+                        color = popupTextColor,
+                        fontSize = popupTextSize
+                    )
+                    Text(
+                        text = stringResource(R.string.result_skill, skillText),
+                        color = popupTextColor,
+                        fontSize = popupTextSize
+                    )
+                }
+            }
+        }
+    }
+}
 
