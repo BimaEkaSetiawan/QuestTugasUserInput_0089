@@ -232,4 +232,32 @@ fun BiodataScreen() {
                         }
                         Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
 
+                        // Tombol Proceed
+                        Button(
+                            onClick = { showResult = true },
+                            enabled = isFormValid,
+                            shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner)),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = colorResource(R.color.button_enabled),
+                                contentColor = colorResource(R.color.button_text),
+                                disabledContainerColor = colorResource(R.color.button_disabled),
+                                disabledContentColor = colorResource(R.color.button_text)
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(dimensionResource(R.dimen.button_height))
+                        ) {
+                            Text(
+                                text = stringResource(R.string.button_proceed),
+                                fontSize = dimensionResource(R.dimen.text_button).value.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+
+            }
+        }
+
+        // Popup hitam: Box di luar Scaffold, mengapung di atasnya
 
