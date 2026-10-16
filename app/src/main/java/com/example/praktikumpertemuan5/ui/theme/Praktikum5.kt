@@ -63,4 +63,19 @@ import java.util.TimeZone
 import kotlinx.coroutines.delay
 import com.example.praktikumpertemuan5.R
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BiodataScreen() {
+    var firstName by rememberSaveable { mutableStateOf("") }
+    var lastName by rememberSaveable { mutableStateOf("") }
+    var email by rememberSaveable { mutableStateOf("") }
+    var birthDate by rememberSaveable { mutableStateOf("") }
+    var experience by rememberSaveable { mutableStateOf("") }
+    var skillAndroid by rememberSaveable { mutableStateOf(false) }
+    var skillUiUx by rememberSaveable { mutableStateOf(false) }
+    var skillWeb by rememberSaveable { mutableStateOf(false) }
+    var showResult by rememberSaveable { mutableStateOf(false) }
+    val popupDuration = integerResource(R.integer.popup_duration_ms).toLong()
 
+
+}
