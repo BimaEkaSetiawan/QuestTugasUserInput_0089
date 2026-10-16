@@ -372,4 +372,28 @@ private fun BirthDateField(
         modifier = modifier.height(dimensionResource(R.dimen.field_height))
     )
 
+    if (showPicker) {
+        DatePickerDialog(
+            onDismissRequest = { showPicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    pickerState.selectedDateMillis?.let { millis ->
+                        val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
+                        formatter.timeZone = TimeZone.getTimeZone("UTC")
+                        onDateSelected(formatter.format(Date(millis)))
+                    }
+                    showPicker = false
+                }) { Text(stringResource(R.string.button_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showPicker = false }) {
+                    Text(stringResource(R.string.button_cancel))
+                }
+            }
+        ) {
+            DatePicker(state = pickerState)
+        }
+    }
+}
+
 
