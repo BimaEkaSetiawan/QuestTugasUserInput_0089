@@ -138,5 +138,21 @@ fun BiodataScreen() {
                             .padding(dimensionResource(R.dimen.card_padding)),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
+                        Text(
+                            text = stringResource(R.string.form_title),
+                            color = colorResource(R.color.title_purple),
+                            fontSize = dimensionResource(R.dimen.text_title).value.sp,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        )
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_small)))
+                        Text(
+                            text = stringResource(R.string.form_subtitle),
+                            color = colorResource(R.color.subtitle_gray),
+                            fontSize = dimensionResource(R.dimen.text_subtitle).value.sp,
+                            textAlign = TextAlign.Center
+                        )
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_large)))
 
-}
+                        // Nama depan & belakang
+
