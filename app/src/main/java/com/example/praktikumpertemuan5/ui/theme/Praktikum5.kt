@@ -85,5 +85,12 @@ fun BiodataScreen() {
         }
     }
 
+    val isFormValid = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            birthDate.isNotBlank() &&
+            experience.isNotBlank() &&
+            (skillAndroid || skillUiUx || skillWeb)
+
 
 }
