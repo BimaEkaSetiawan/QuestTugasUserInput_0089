@@ -102,5 +102,14 @@ fun BiodataScreen() {
                     .padding(innerPadding)
             ) {
                 // Gambar header
+                Image(
+                    painter = painterResource(R.drawable.background_header),
+                    contentDescription = stringResource(R.string.cd_background),
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(R.dimen.header_height))
+                )
+
 
 }
