@@ -313,3 +313,14 @@ fun BiodataScreen() {
     }
 }
 
+@Composable
+private fun fieldColors() = OutlinedTextFieldDefaults.colors(
+    focusedBorderColor = colorResource(R.color.title_purple),
+    unfocusedBorderColor = colorResource(R.color.field_border),
+    focusedTextColor = colorResource(R.color.field_text),
+    unfocusedTextColor = colorResource(R.color.field_text),
+    focusedLabelColor = colorResource(R.color.title_purple),
+    unfocusedLabelColor = colorResource(R.color.field_text)
+)
+
+
