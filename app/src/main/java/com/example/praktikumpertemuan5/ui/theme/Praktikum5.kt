@@ -174,4 +174,13 @@ fun BiodataScreen() {
                         }
                         Spacer(Modifier.height(dimensionResource(R.dimen.spacing_medium)))
 
+                        // Email
+                        FormField(
+                            value = email,
+                            onValueChange = { email = it },
+                            hint = stringResource(R.string.hint_email),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Spacer(Modifier.height(dimensionResource(R.dimen.spacing_medium)))
+
 
