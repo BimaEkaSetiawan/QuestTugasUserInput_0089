@@ -92,5 +92,15 @@ fun BiodataScreen() {
             experience.isNotBlank() &&
             (skillAndroid || skillUiUx || skillWeb)
 
+    Box(modifier = Modifier.fillMaxSize()) {
+        Scaffold(
+            containerColor = colorResource(R.color.screen_background)
+        ) { innerPadding ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+            ) {
+                // Gambar header
 
 }
